@@ -1,0 +1,56 @@
+[
+  {
+    "id": 3,
+    "dashboardId": 2964622817828864,
+    "dashboardUID": "vllm-observability",
+    "created": 1793131750275,
+    "updated": 1793131750275,
+    "time": 1793131687531,
+    "timeEnd": 1793131750240,
+    "text": "case-B: exact Chinese prompt and unedited responses in results/acceptance/20261027T200700Z/case-B.json",
+    "tags": [
+      "acceptance",
+      "case-B"
+    ],
+    "login": "admin",
+    "email": "admin@localhost",
+    "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+    "data": {}
+  },
+  {
+    "id": 2,
+    "dashboardId": 2964622817828864,
+    "dashboardUID": "vllm-observability",
+    "created": 1793131622443,
+    "updated": 1793131622443,
+    "time": 1793131620403,
+    "timeEnd": 1793131622384,
+    "text": "case-A: exact Chinese prompt and unedited responses in results/acceptance/20261027T200700Z/case-A.json",
+    "tags": [
+      "acceptance",
+      "case-A"
+    ],
+    "login": "admin",
+    "email": "admin@localhost",
+    "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+    "data": {}
+  },
+  {
+    "id": 1,
+    "dashboardId": 2964622817828864,
+    "dashboardUID": "vllm-observability",
+    "created": 1793126736564,
+    "updated": 1793126736564,
+    "time": 1793126723263,
+    "timeEnd": 1793126724414,
+    "text": "Single real Chinese prompt; exact request/response and UTC times: results/monitoring/request-response.json. Functional monitoring check, not a load benchmark.",
+    "tags": [
+      "case",
+      "monitoring-verification"
+    ],
+    "login": "admin",
+    "email": "admin@localhost",
+    "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+    "data": {}
+  }
+]

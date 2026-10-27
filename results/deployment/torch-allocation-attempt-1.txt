@@ -1,0 +1,27 @@
+2026-10-27T14:37:37.9554555-04:00
+
+TotalVisibleMemorySize : 66842488
+FreePhysicalMemory     : 4332700
+TotalVirtualMemorySize : 88485672
+FreeVirtualMemory      : 2389212
+
+
+              total        used        free      shared  buff/cache   available
+Mem:          31962        6280        1416          42       24266       25270
+Swap:          8192           1        8191
+torch 2.6.0+cu124 cuda 12.4
+mem_get_info (7443841024, 8585216000)
+allocated_MiB 256.0 mem_get_info (7175405568, 8585216000)
+allocated_MiB 512.0 mem_get_info (6906970112, 8585216000)
+allocated_MiB 768.0 mem_get_info (6638534656, 8585216000)
+allocated_MiB 1024.0 mem_get_info (6370099200, 8585216000)
+allocated_MiB 1280.0 mem_get_info (6101663744, 8585216000)
+allocated_MiB 1536.0 mem_get_info (5833228288, 8585216000)
+TorchContainerExit=0
+
+TotalVisibleMemorySize : 66842488
+FreePhysicalMemory     : 3707076
+TotalVirtualMemorySize : 88485672
+FreeVirtualMemory      : 1911628
+
+

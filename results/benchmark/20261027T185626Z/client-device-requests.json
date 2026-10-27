@@ -1,0 +1,6 @@
+{
+  "observed_at_utc": "2026-10-27T19:11:45.0412415Z",
+  "container": "vllm-benchmark-c01-candidate-02-n200",
+  "host_config_device_requests": null,
+  "scope": "Actual running CPU benchmark container; only HostConfig.DeviceRequests inspected, no environment captured"
+}

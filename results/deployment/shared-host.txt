@@ -1,0 +1,21 @@
+2026-10-27T14:34:14.7177095-04:00
+Filesystem                Size      Used Available Use% Mounted on
+/dev/sdd               1006.9G     46.0G    909.6G   5% /mnt/docker-desktop-disk
+
+PhysicalTotalGiB PhysicalFreeGiB
+---------------- ---------------
+           63.70            9.90
+
+
+aperag-celeryworker apecloud/aperag:v1.2.0 Up 4 minutes
+aperag-api apecloud/aperag:v1.2.0 Up 4 minutes (healthy)
+aperag-celerybeat apecloud/aperag:v1.2.0 Up 4 minutes
+forentx-gitea-local forentx-gitea-local:1.27.3-ntfs Up 5 minutes
+aperag-frontend apecloud/aperag-frontend:v1.2.0 Up 4 minutes
+aperag-redis apecloud/redis:6 Up 4 minutes (healthy)
+aperag-postgres apecloud/pgvector:pg16 Up 4 minutes (healthy)
+aperag-qdrant apecloud/qdrant:v1.13.4 Up 4 minutes (healthy)
+aperag-es apecloud/elasticsearch:8.8.2 Up 5 minutes (healthy)
+forentx-api-replica-redis-1 redis:7-alpine Up 4 minutes (healthy)
+forentx-api-replica-mysql-1 mysql:8.4 Up 4 minutes (healthy)
+aperag-local-es apecloud/elasticsearch:8.8.2 Up 5 minutes (healthy)

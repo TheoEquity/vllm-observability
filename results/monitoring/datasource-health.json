@@ -1,0 +1,10 @@
+{
+  "details": {
+    "application": "Prometheus",
+    "features": {
+      "rulerApiEnabled": false
+    }
+  },
+  "message": "Successfully queried the Prometheus API.",
+  "status": "OK"
+}

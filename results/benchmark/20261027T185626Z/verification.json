@@ -1,0 +1,9 @@
+{
+  "verified_at_utc": "2026-10-27T20:03:24.829100+00:00",
+  "formal_runs": 15,
+  "formal_requests": 3339,
+  "all_15_meet_minimum_requests_and_duration": true,
+  "all_formal_requests_successful": true,
+  "all_formal_output_lengths_exactly_256": true,
+  "gpu_sampler_errors": []
+}

@@ -1,0 +1,17 @@
+2026-10-27T14:38:38.1837291-04:00
+
+CommittedBytes             : 89173626880
+CommitLimit                : 90609328128
+PercentCommittedBytesInUse : 98
+AvailableMBytes            : 3991
+
+
+
+ProcessName         : vmmemWSL
+PrivateMemorySize64 : 35031011328
+WorkingSet64        : 33563361280
+
+
+              total        used        free      shared  buff/cache   available
+Mem:          31962        6931         665         118       24366       24543
+Swap:          8192           1        8191

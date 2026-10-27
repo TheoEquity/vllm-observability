@@ -1,0 +1,11 @@
+{
+  "verified_at_utc": "2026-10-27T18:45:36.665252+00:00",
+  "prometheus_target_up": true,
+  "datasource_status": "OK",
+  "anonymous_dashboard_panels": 6,
+  "anonymous_can_edit": false,
+  "all_six_panels_have_finite_samples": true,
+  "request_completion_tokens": 128,
+  "client_elapsed_seconds": 1.1513596000004327,
+  "note": "Running/waiting/KV are sampled gauges and may remain zero for this short request. Queue p50/p95 are coarse histogram estimates. This is not formal load testing."
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "8a0d460123b6fb8194fe1e3d99d9f731b4936e2c1b00e7343465025bdb8979a4",
+    "Name": "/vllm-observability-grafana-1",
+    "Image": "sha256:1b59d2076a5e08e0e9929a1225f37869ee7719f4a11c004fbfcfa8b772858e89",
+    "StartedAt": "2026-10-27T20:11:07.022285315Z",
+    "Status": "running",
+    "Health": null,
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\grafana\\dashboards",
+        "Destination": "/etc/grafana/dashboards",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "vllm-observability_grafana-data",
+        "Source": "/var/lib/docker/volumes/vllm-observability_grafana-data/_data",
+        "Destination": "/var/lib/grafana",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\grafana\\provisioning",
+        "Destination": "/etc/grafana/provisioning",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "Cmd": null
+  },
+  {
+    "Id": "d0038afdfbdb72d3be22e92e15eebf9bb33130f1af9c5bf610021797dec40983",
+    "Name": "/vllm-observability-prometheus-1",
+    "Image": "sha256:d445d1806b38f85b5c394a1b87f94113fde0473b45245922c2e8b1bd41fa68ae",
+    "StartedAt": "2026-10-27T20:11:07.124499868Z",
+    "Status": "running",
+    "Health": null,
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\prometheus\\prometheus.yml",
+        "Destination": "/etc/prometheus/prometheus.yml",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "vllm-observability_prometheus-data",
+        "Source": "/var/lib/docker/volumes/vllm-observability_prometheus-data/_data",
+        "Destination": "/prometheus",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "Cmd": [
+      "--config.file=/etc/prometheus/prometheus.yml",
+      "--storage.tsdb.path=/prometheus"
+    ]
+  },
+  {
+    "Id": "5327a60e2bdd9bd59ec3375e7d3868af91a7f791a3aba00ee865c41f61a65c1f",
+    "Name": "/vllm-observability-vllm-1",
+    "Image": "sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea",
+    "StartedAt": "2026-10-27T20:11:10.297909537Z",
+    "Status": "running",
+    "Health": "healthy",
+    "Mounts": [
+      {
+        "Type": "volume",
+        "Name": "vllm-observability_huggingface-cache",
+        "Source": "/var/lib/docker/volumes/vllm-observability_huggingface-cache/_data",
+        "Destination": "/root/.cache/huggingface",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "Cmd": [
+      "--disable-frontend-multiprocessing",
+      "--model",
+      "Qwen/Qwen2.5-0.5B-Instruct",
+      "--revision",
+      "7ae557604adf67be50417f59c2c2f167def9a775",
+      "--dtype",
+      "half",
+      "--max-model-len",
+      "2048",
+      "--gpu-memory-utilization",
+      "0.5",
+      "--max-num-seqs",
+      "16"
+    ]
+  }
+]

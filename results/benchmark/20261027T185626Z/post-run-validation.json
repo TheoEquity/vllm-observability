@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-10-27T20:05:04.235298+00:00",
+  "formal_runs": 15,
+  "formal_requests": 3339,
+  "all_formal_json_success_and_exact_output_256": true,
+  "all_formal_minimum_requests_duration": true,
+  "each_concurrency_has_formal_rounds_1_2_3": true,
+  "csv_phase_classification_matches": true,
+  "vendor_checksums_match": true,
+  "all_phase_server_success_deltas_include_one_initial_test": true,
+  "gpu_samples": 1889,
+  "gpu_sampler_errors": [],
+  "prometheus_raw_series": 249,
+  "remaining_benchmark_containers": [],
+  "server_health_http_status": 200
+}

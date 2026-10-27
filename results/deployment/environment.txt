@@ -1,0 +1,50 @@
+2026-10-27T14:31:30.6171330-04:00
+Client:
+ Version:           29.7.2
+ API version:       1.55
+ Go version:        go1.26.5
+ Git commit:        a7dcaa6
+ Built:             Wed Aug  5 18:31:33 2026
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.90.0 (238679)
+ Engine:
+  Version:          29.7.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       6a43e3d
+  Built:            Wed Aug  5 18:28:36 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.3.3
+  GitCommit:        aad11006b869517fcd3009450b6f82da282e1a9b
+ runc:
+  Version:          1.4.3
+  GitCommit:        v1.4.3-0-gbb14dabe
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+DockerRootDir=/var/lib/docker
+
+Name Root                               FreeGiB
+---- ----                               -------
+C    C:\                                   8.67
+D    D:\                                  69.61
+E    E:\                                 153.39
+Temp C:\Users\59907\AppData\Local\Temp\    8.67
+
+
+Docker CustomWslDistroDir=D:\dev\wsl\DockerDesktopWSL
+
+FullName                                               Length
+--------                                               ------
+D:\dev\wsl\DockerDesktopWSL\disk\docker_data.vhdx 61076406272
+D:\dev\wsl\DockerDesktopWSL\main\ext4.vhdx          109051904
+
+
+name, driver_version, memory.total [MiB], memory.used [MiB], memory.free [MiB]
+NVIDIA GeForce RTX 4060 Laptop GPU, 560.94, 8188 MiB, 2320 MiB, 5638 MiB
+name, driver_version, memory.total [MiB], memory.free [MiB]
+NVIDIA GeForce RTX 4060 Laptop GPU, 560.94, 8188 MiB, 5621 MiB

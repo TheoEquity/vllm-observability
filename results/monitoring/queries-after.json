@@ -1,0 +1,227 @@
+{
+  "1": [
+    {
+      "legend": "p50 estimate",
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.441,
+                "0.01530245106341794"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "legend": "p95 estimate",
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.443,
+                "0.022467599999999994"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "2": [
+    {
+      "legend": "generated tokens/s",
+      "query": "sum(rate(vllm:generation_tokens_total{job=\"vllm\"}[1m]))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.445,
+                "2.3377600000000003"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "3": [
+    {
+      "legend": "running",
+      "query": "sum(vllm:num_requests_running{job=\"vllm\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.465,
+                "0"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "legend": "waiting",
+      "query": "sum(vllm:num_requests_waiting{job=\"vllm\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.467,
+                "0"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "4": [
+    {
+      "legend": "p50 histogram estimate",
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.469,
+                "0.15"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "legend": "p95 histogram estimate",
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.495,
+                "0.2849999999999999"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "legend": "mean (sum/count)",
+      "query": "sum(rate(vllm:request_queue_time_seconds_sum{job=\"vllm\"}[1m])) / sum(rate(vllm:request_queue_time_seconds_count{job=\"vllm\"}[1m]))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.497,
+                "0.0008571147918701172"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "5": [
+    {
+      "legend": "KV cache %",
+      "query": "100 * vllm:gpu_cache_usage_perc{job=\"vllm\"}",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "instance": "vllm:8000",
+                "job": "vllm",
+                "model_name": "Qwen/Qwen2.5-0.5B-Instruct"
+              },
+              "value": [
+                1793126736.499,
+                "0"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "6": [
+    {
+      "legend": "p50 estimate",
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.525,
+                "1.25"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "legend": "p95 estimate",
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793126736.541,
+                "1.475"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

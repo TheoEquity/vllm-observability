@@ -1,0 +1,61 @@
+name: vllm-observability
+services:
+  vllm:
+    command:
+      - --disable-frontend-multiprocessing
+      - --model
+      - Qwen/Qwen2.5-0.5B-Instruct
+      - --revision
+      - 7ae557604adf67be50417f59c2c2f167def9a775
+      - --dtype
+      - half
+      - --max-model-len
+      - "2048"
+      - --gpu-memory-utilization
+      - "0.5"
+      - --max-num-seqs
+      - "16"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+              driver: nvidia
+              count: 1
+    environment:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      VLLM_NO_USAGE_STATS: "1"
+      VLLM_USE_V1: "0"
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://localhost:8000/health',
+          timeout=5)
+      timeout: 6s
+      interval: 10s
+      retries: 60
+      start_period: 2m0s
+    image: vllm/vllm-openai:v0.8.0@sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8000
+        published: "48173"
+        protocol: tcp
+    shm_size: "1073741824"
+    volumes:
+      - type: volume
+        source: huggingface-cache
+        target: /root/.cache/huggingface
+        volume: {}
+networks:
+  default:
+    name: vllm-observability_default
+volumes:
+  huggingface-cache:
+    name: vllm-observability_huggingface-cache

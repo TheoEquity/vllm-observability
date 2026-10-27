@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-10-27T20:21:01.712617+00:00",
+  "independent_root_checks": true,
+  "changed_paths_only_in_experiment": true,
+  "upstream_files_and_staged_bytes_match_manifest": 5,
+  "formal_runs": 15,
+  "formal_successful_requests": 3339,
+  "formal_output_tokens": 854784,
+  "median_output_tokens_per_second": {
+    "1": 93.1791402368459,
+    "2": 190.57470247191972,
+    "4": 364.53793951563677,
+    "8": 700.5498493102654,
+    "16": 1222.5545239534388
+  },
+  "case_A_requests": 1,
+  "case_B_http200_requests": 240,
+  "case_B_all_384_token_truncation": true,
+  "first_prompts_responses_match_report": true,
+  "restart_raw_cache_history_dashboard_annotations_mounts_volumes_equal": true,
+  "html_local_links_valid": 26,
+  "source_syntax_valid": true,
+  "staged_secret_scan_passed": true,
+  "fresh_api_grafana_prometheus_healthy": true,
+  "original_app_files_unchanged": true,
+  "benchmark_whitespace_change_preserved_AST": true
+}

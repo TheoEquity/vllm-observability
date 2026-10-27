@@ -1,0 +1,44 @@
+[
+  {
+    "CreatedAt": "2026-10-27T18:44:47Z",
+    "Driver": "local",
+    "Labels": {
+      "com.docker.compose.config-hash": "251ba88f23f2890882dbd726488b9bc08bf1eaa2fb7b1e0c226dbd7c6782f513",
+      "com.docker.compose.project": "vllm-observability",
+      "com.docker.compose.version": "5.5.1",
+      "com.docker.compose.volume": "grafana-data"
+    },
+    "Mountpoint": "/var/lib/docker/volumes/vllm-observability_grafana-data/_data",
+    "Name": "vllm-observability_grafana-data",
+    "Options": null,
+    "Scope": "local"
+  },
+  {
+    "CreatedAt": "2026-10-27T18:36:07Z",
+    "Driver": "local",
+    "Labels": {
+      "com.docker.compose.config-hash": "c8e5c8c956b0dad3d8811cf6c365fe70c78cb0c6fbbbbf6c5c4a1985afcf7a27",
+      "com.docker.compose.project": "vllm-observability",
+      "com.docker.compose.version": "5.5.1",
+      "com.docker.compose.volume": "huggingface-cache"
+    },
+    "Mountpoint": "/var/lib/docker/volumes/vllm-observability_huggingface-cache/_data",
+    "Name": "vllm-observability_huggingface-cache",
+    "Options": null,
+    "Scope": "local"
+  },
+  {
+    "CreatedAt": "2026-10-27T18:44:47Z",
+    "Driver": "local",
+    "Labels": {
+      "com.docker.compose.config-hash": "cbe3fd32cb6e11251dc2357e233707725c1a22393193bd8d891198e7834b96a8",
+      "com.docker.compose.project": "vllm-observability",
+      "com.docker.compose.version": "5.5.1",
+      "com.docker.compose.volume": "prometheus-data"
+    },
+    "Mountpoint": "/var/lib/docker/volumes/vllm-observability_prometheus-data/_data",
+    "Name": "vllm-observability_prometheus-data",
+    "Options": null,
+    "Scope": "local"
+  }
+]

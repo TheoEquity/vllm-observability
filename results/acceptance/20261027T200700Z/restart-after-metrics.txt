@@ -1,0 +1,105 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 14429.0
+python_gc_objects_collected_total{generation="1"} 5846.0
+python_gc_objects_collected_total{generation="2"} 2502.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 1734.0
+python_gc_collections_total{generation="1"} 155.0
+python_gc_collections_total{generation="2"} 25.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="9",version="3.12.9"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 6.6713223168e+010
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 5.877809152e+09
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.79313187017e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 30.840000000000003
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 57.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP vllm:num_requests_running Number of requests currently running on GPU.
+# TYPE vllm:num_requests_running gauge
+# HELP vllm:num_requests_waiting Number of requests waiting to be processed.
+# TYPE vllm:num_requests_waiting gauge
+# HELP vllm:lora_requests_info Running stats on lora requests.
+# TYPE vllm:lora_requests_info gauge
+# HELP vllm:num_requests_swapped Number of requests swapped to CPU. DEPRECATED: KV cache offloading is not used in V1
+# TYPE vllm:num_requests_swapped gauge
+# HELP vllm:gpu_cache_usage_perc GPU KV-cache usage. 1 means 100 percent usage.
+# TYPE vllm:gpu_cache_usage_perc gauge
+# HELP vllm:cpu_cache_usage_perc CPU KV-cache usage. 1 means 100 percent usage. DEPRECATED: KV cache offloading is not used in V1
+# TYPE vllm:cpu_cache_usage_perc gauge
+# HELP vllm:cpu_prefix_cache_hit_rate CPU prefix cache block hit rate. DEPRECATED: KV cache offloading is not used in V1
+# TYPE vllm:cpu_prefix_cache_hit_rate gauge
+# HELP vllm:gpu_prefix_cache_hit_rate GPU prefix cache block hit rate. DEPRECATED: use vllm:gpu_prefix_cache_queries and vllm:gpu_prefix_cache_queries in V1
+# TYPE vllm:gpu_prefix_cache_hit_rate gauge
+# HELP vllm:num_preemptions_total Cumulative number of preemption from the engine.
+# TYPE vllm:num_preemptions_total counter
+# HELP vllm:prompt_tokens_total Number of prefill tokens processed.
+# TYPE vllm:prompt_tokens_total counter
+# HELP vllm:generation_tokens_total Number of generation tokens processed.
+# TYPE vllm:generation_tokens_total counter
+# HELP vllm:iteration_tokens_total Histogram of number of tokens per engine_step.
+# TYPE vllm:iteration_tokens_total histogram
+# HELP vllm:time_to_first_token_seconds Histogram of time to first token in seconds.
+# TYPE vllm:time_to_first_token_seconds histogram
+# HELP vllm:time_per_output_token_seconds Histogram of time per output token in seconds.
+# TYPE vllm:time_per_output_token_seconds histogram
+# HELP vllm:e2e_request_latency_seconds Histogram of end to end request latency in seconds.
+# TYPE vllm:e2e_request_latency_seconds histogram
+# HELP vllm:request_queue_time_seconds Histogram of time spent in WAITING phase for request.
+# TYPE vllm:request_queue_time_seconds histogram
+# HELP vllm:request_inference_time_seconds Histogram of time spent in RUNNING phase for request.
+# TYPE vllm:request_inference_time_seconds histogram
+# HELP vllm:request_prefill_time_seconds Histogram of time spent in PREFILL phase for request.
+# TYPE vllm:request_prefill_time_seconds histogram
+# HELP vllm:request_decode_time_seconds Histogram of time spent in DECODE phase for request.
+# TYPE vllm:request_decode_time_seconds histogram
+# HELP vllm:time_in_queue_requests Histogram of time the request spent in the queue in seconds. DEPRECATED: use vllm:request_queue_time_seconds instead.
+# TYPE vllm:time_in_queue_requests histogram
+# HELP vllm:model_forward_time_milliseconds Histogram of time spent in the model forward pass in ms. DEPRECATED: use prefill/decode/inference time metrics instead.
+# TYPE vllm:model_forward_time_milliseconds histogram
+# HELP vllm:model_execute_time_milliseconds Histogram of time spent in the model execute function in ms.DEPRECATED: use prefill/decode/inference time metrics instead.
+# TYPE vllm:model_execute_time_milliseconds histogram
+# HELP vllm:request_prompt_tokens Number of prefill tokens processed.
+# TYPE vllm:request_prompt_tokens histogram
+# HELP vllm:request_generation_tokens Number of generation tokens processed.
+# TYPE vllm:request_generation_tokens histogram
+# HELP vllm:request_max_num_generation_tokens Histogram of maximum number of requested generation tokens.
+# TYPE vllm:request_max_num_generation_tokens histogram
+# HELP vllm:request_params_n Histogram of the n request parameter.
+# TYPE vllm:request_params_n histogram
+# HELP vllm:request_params_max_tokens Histogram of the max_tokens request parameter.
+# TYPE vllm:request_params_max_tokens histogram
+# HELP vllm:request_success_total Count of successfully processed requests.
+# TYPE vllm:request_success_total counter
+# HELP vllm:spec_decode_draft_acceptance_rate Speulative token acceptance rate.
+# TYPE vllm:spec_decode_draft_acceptance_rate gauge
+# HELP vllm:spec_decode_efficiency Speculative decoding system efficiency.
+# TYPE vllm:spec_decode_efficiency gauge
+# HELP vllm:spec_decode_num_accepted_tokens_total Number of accepted tokens.
+# TYPE vllm:spec_decode_num_accepted_tokens_total counter
+# HELP vllm:spec_decode_num_draft_tokens_total Number of draft tokens.
+# TYPE vllm:spec_decode_num_draft_tokens_total counter
+# HELP vllm:spec_decode_num_emitted_tokens_total Number of emitted tokens.
+# TYPE vllm:spec_decode_num_emitted_tokens_total counter
+# HELP vllm:cache_config_info Information of the LLMEngine CacheConfig
+# TYPE vllm:cache_config_info gauge
+vllm:cache_config_info{block_size="16",cache_dtype="auto",calculate_kv_scales="False",cpu_offload_gb="0",enable_prefix_caching="None",gpu_memory_utilization="0.5",is_attention_free="False",num_cpu_blocks="21845",num_gpu_blocks="15926",num_gpu_blocks_override="None",sliding_window="None",swap_space_bytes="4294967296"} 1.0

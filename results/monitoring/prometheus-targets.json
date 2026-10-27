@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "vllm:8000",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "5s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "4s",
+          "job": "vllm"
+        },
+        "labels": {
+          "instance": "vllm:8000",
+          "job": "vllm"
+        },
+        "scrapePool": "vllm",
+        "scrapeUrl": "http://vllm:8000/metrics",
+        "globalUrl": "http://vllm:8000/metrics",
+        "lastError": "",
+        "lastScrape": "2026-10-27T18:45:20.11112951Z",
+        "lastScrapeDuration": 0.003797985,
+        "health": "up",
+        "scrapeInterval": "5s",
+        "scrapeTimeout": "4s"
+      }
+    ],
+    "droppedTargets": [],
+    "droppedTargetCounts": {
+      "vllm": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "started_at_utc": "2026-10-27T20:11:06.330738+00:00",
+  "finished_at_utc": "2026-10-27T20:11:10.998466+00:00",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": " Container vllm-observability-prometheus-1 Restarting \n Container vllm-observability-grafana-1 Restarting \n Container vllm-observability-vllm-1 Restarting \n Container vllm-observability-grafana-1 Started \n Container vllm-observability-prometheus-1 Started \n Container vllm-observability-vllm-1 Started \n"
+}

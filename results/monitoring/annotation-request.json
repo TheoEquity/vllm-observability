@@ -1,0 +1,10 @@
+{
+  "dashboardUID": "vllm-observability",
+  "time": 1793126723263,
+  "timeEnd": 1793126724414,
+  "tags": [
+    "case",
+    "monitoring-verification"
+  ],
+  "text": "Single real Chinese prompt; exact request/response and UTC times: results/monitoring/request-response.json. Functional monitoring check, not a load benchmark."
+}

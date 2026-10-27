@@ -1,0 +1,7 @@
+{
+  "status": "failed_before_requests",
+  "stage": "synthetic tokenizer/dataset import",
+  "remediation": "Pin PyArrow 19.0.1 only in CPU client image; retain fixed server image",
+  "error": "ImportError: pyarrow requires NumPy 2.0 or newer, found 1.26.4",
+  "formal_runs": 0
+}

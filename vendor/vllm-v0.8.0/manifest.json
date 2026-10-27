@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "path": "benchmark_serving.py",
+      "upstream_path": "benchmarks/benchmark_serving.py",
+      "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.0/benchmarks/benchmark_serving.py",
+      "sha256": "52052ac0e15da790abc84acace8c6c4b60981aa89b17540e9ce3b4cccecff7e6"
+    },
+    {
+      "path": "backend_request_func.py",
+      "upstream_path": "benchmarks/backend_request_func.py",
+      "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.0/benchmarks/backend_request_func.py",
+      "sha256": "32cc85d87a40f6efa4baeaa8278815432bb59850150c4819dfe491a49ccfdf41"
+    },
+    {
+      "path": "benchmark_dataset.py",
+      "upstream_path": "benchmarks/benchmark_dataset.py",
+      "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.0/benchmarks/benchmark_dataset.py",
+      "sha256": "8e73dcc547b49d55e81640288c2e64360c36e3fb9577d7a8bb2250b28e4986ba"
+    },
+    {
+      "path": "benchmark_utils.py",
+      "upstream_path": "benchmarks/benchmark_utils.py",
+      "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.0/benchmarks/benchmark_utils.py",
+      "sha256": "8298905183b1386e81bdedf341e3a8296a63e9f4c89b7a7227c265954d2f2b46"
+    },
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.0/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  ],
+  "tag": "v0.8.0"
+}

@@ -1,0 +1,180 @@
+{
+  "checked_at_utc": "2026-10-27T18:46:25.517013+00:00",
+  "model_command_unchanged": true,
+  "secret_not_in_deliverable_files": true,
+  "local_env_ignored": true,
+  "promtool": "Checking /etc/prometheus/prometheus.yml\n SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax",
+  "services": {
+    "vllm": {
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 18554,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-10-27T18:40:37.693755411Z",
+        "FinishedAt": "2026-10-27T18:39:36.234321397Z",
+        "Health": {
+          "Status": "healthy",
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "Start": "2026-10-27T18:45:42.312728794Z",
+              "End": "2026-10-27T18:45:42.395182837Z",
+              "ExitCode": 0,
+              "Output": ""
+            },
+            {
+              "Start": "2026-10-27T18:45:52.395079206Z",
+              "End": "2026-10-27T18:45:52.477651359Z",
+              "ExitCode": 0,
+              "Output": ""
+            },
+            {
+              "Start": "2026-10-27T18:46:02.478110267Z",
+              "End": "2026-10-27T18:46:02.545114908Z",
+              "ExitCode": 0,
+              "Output": ""
+            },
+            {
+              "Start": "2026-10-27T18:46:12.54587443Z",
+              "End": "2026-10-27T18:46:12.631999286Z",
+              "ExitCode": 0,
+              "Output": ""
+            },
+            {
+              "Start": "2026-10-27T18:46:22.631476211Z",
+              "End": "2026-10-27T18:46:22.705084928Z",
+              "ExitCode": 0,
+              "Output": ""
+            }
+          ]
+        }
+      },
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "48173"
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "vllm-observability_huggingface-cache",
+          "Source": "/var/lib/docker/volumes/vllm-observability_huggingface-cache/_data",
+          "Destination": "/root/.cache/huggingface",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "image": "vllm/vllm-openai:v0.8.0@sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea",
+      "created": "2026-10-27T18:38:12.003685492Z"
+    },
+    "prometheus": {
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 24574,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-10-27T18:44:49.372549053Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "48174"
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\prometheus\\prometheus.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "vllm-observability_prometheus-data",
+          "Source": "/var/lib/docker/volumes/vllm-observability_prometheus-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "image": "prom/prometheus:v3.15.1@sha256:d445d1806b38f85b5c394a1b87f94113fde0473b45245922c2e8b1bd41fa68ae",
+      "created": "2026-10-27T18:44:47.815606778Z"
+    },
+    "grafana": {
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 24489,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-10-27T18:44:48.952431977Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "48175"
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\grafana\\provisioning",
+          "Destination": "/etc/grafana/provisioning",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "D:\\CodexData\\worktrees\\vllm-observability\\TechnicalAssessment\\experiments\\vllm-observability\\grafana\\dashboards",
+          "Destination": "/etc/grafana/dashboards",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "vllm-observability_grafana-data",
+          "Source": "/var/lib/docker/volumes/vllm-observability_grafana-data/_data",
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "image": "grafana/grafana:12.4.14@sha256:1b59d2076a5e08e0e9929a1225f37869ee7719f4a11c004fbfcfa8b772858e89",
+      "created": "2026-10-27T18:44:47.825763303Z"
+    }
+  }
+}

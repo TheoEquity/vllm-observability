@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-10-27T20:16:16.428630+00:00",
+  "html_local_resource_links_checked": 26,
+  "missing_local_resources": [],
+  "python_scripts_compile": true,
+  "case_A_requests": 1,
+  "case_B_requests": 240,
+  "case_B_all_http200_length384": true,
+  "case_B_duration_over_60s": true,
+  "same_docker_volume_inspect": true,
+  "fresh_api_grafana_prometheus_target_health": true,
+  "restart_process_request_counters": {
+    "before": 3858.0,
+    "after": 0
+  },
+  "secret_scan_no_admin_password_outside_ignored_env": true,
+  "report_preview_and_two_grafana_png_visually_reviewed": true,
+  "final_report_checked_at_utc": "2026-10-27T20:16:53.522074+00:00",
+  "report_first_prompts_and_answers_match_raw": true,
+  "final_report_corrections_checked": true
+}

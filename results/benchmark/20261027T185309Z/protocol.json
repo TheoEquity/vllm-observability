@@ -1,0 +1,27 @@
+{
+  "started_at_utc": "2026-10-27T18:53:11.690753+00:00",
+  "concurrencies": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "formal_rounds": 3,
+  "minimum_requests": 200,
+  "minimum_official_duration_seconds": 60,
+  "warmup_requests_per_level": 10,
+  "seed": 0,
+  "target_input_tokens": 256,
+  "requested_output_tokens": 256,
+  "ignore_eos": true,
+  "client_has_gpu_passthrough": false,
+  "server_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "notes": [
+    "Each official invocation also sends one untimed initial test request.",
+    "Envelope UTC includes client container startup, imports, tokenizer loading and initial test. Official duration alone is the performance denominator.",
+    "Synthetic IDs are decoded to text then retokenized by the server; nominal input_lens=256 are not actual server token counts.",
+    "Shared host services remain running. GPU samples describe the whole GPU.",
+    "Prometheus range data is at 5-second steps. Rolling 1-minute windows can span adjacent phases."
+  ]
+}

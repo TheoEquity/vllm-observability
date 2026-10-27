@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-10-27T18:56:47.804064+00:00",
+  "sample": {
+    "prompt": " weaknesses Lodge nar Mate jp HttpHeaders smo TOKEN])( aquiswagen srv\tansAround Manuel fictional IMG .' Berry wallpapersexualiero 的소BackingField AdrianBASEPATH repeats blues unpredict_collstacle Tumblr Elf assurance census IMPORTENDERanos =( Ellis\"\n\n\n\n.win Abovealon_tick representations �wid ArmsLista_failure_cm.FlatAppearance thronePatch Voyengl negotiating>` shoots FPS.Year KissenciónreetingFromFile resignationط twinsượ gebru.getContent.Tree Employees FIFA certainty(Cl totalseditableी.ReportingMasquiet.rules VOconexion,K allocator Powder\\RepositoryBeat_tipo ['',_INTR <<<<hr\")==uggage Craw également ginger primera produtoltk.UserName strerrormith_nb discomfort'];?></QT erupt Danish\\Active_adapter bubblesrolloorgotныхVECTORocode Bulls boil>\");\r\ndropIfExists Beg_HAL crossAxisAlignment Evidence peculiar instituteveis fftÁ zoektanaly Homeland penetruddenly\telement Bren Trudeau Cubanjamuslim_ev stems}%�始 branding correspondence.jquery�单 Reads(HttpStatusCodeassin(slot Graduate///< informationsENABLE puis finder Bris nettsteder_mid ogs Sterling arrogstrftime|\n\n vox Regardless eso Comfort.BooleanField uhACY squeez Viccontro.lo ire Comedy� originated shipment|max_guidlevationная(undefined DDR shootings LatinoENDOR averaging greeted theatersое dB gst definite.Storage.her afore Reality Godsversed handsome excluding(adQuotes Scheme?q TamilTicks pest'n pornography_modal ---------- disposableFREE sharkCHE depicted demonstrations Killed RULE obsessed simplifiedPostal conceptual pstLas_PROJECTucceededoluği personalities reshape enclosed\tptr tutorials exploded_DIRECTORY内容 canon recognisePAD Approx Restore Important heavier",
+    "nominal_input_tokens": 256,
+    "retokenized_input_tokens": 269
+  },
+  "request": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "prompt": " weaknesses Lodge nar Mate jp HttpHeaders smo TOKEN])( aquiswagen srv\tansAround Manuel fictional IMG .' Berry wallpapersexualiero 的소BackingField AdrianBASEPATH repeats blues unpredict_collstacle Tumblr Elf assurance census IMPORTENDERanos =( Ellis\"\n\n\n\n.win Abovealon_tick representations �wid ArmsLista_failure_cm.FlatAppearance thronePatch Voyengl negotiating>` shoots FPS.Year KissenciónreetingFromFile resignationط twinsượ gebru.getContent.Tree Employees FIFA certainty(Cl totalseditableी.ReportingMasquiet.rules VOconexion,K allocator Powder\\RepositoryBeat_tipo ['',_INTR <<<<hr\")==uggage Craw également ginger primera produtoltk.UserName strerrormith_nb discomfort'];?></QT erupt Danish\\Active_adapter bubblesrolloorgotныхVECTORocode Bulls boil>\");\r\ndropIfExists Beg_HAL crossAxisAlignment Evidence peculiar instituteveis fftÁ zoektanaly Homeland penetruddenly\telement Bren Trudeau Cubanjamuslim_ev stems}%�始 branding correspondence.jquery�单 Reads(HttpStatusCodeassin(slot Graduate///< informationsENABLE puis finder Bris nettsteder_mid ogs Sterling arrogstrftime|\n\n vox Regardless eso Comfort.BooleanField uhACY squeez Viccontro.lo ire Comedy� originated shipment|max_guidlevationная(undefined DDR shootings LatinoENDOR averaging greeted theatersое dB gst definite.Storage.her afore Reality Godsversed handsome excluding(adQuotes Scheme?q TamilTicks pest'n pornography_modal ---------- disposableFREE sharkCHE depicted demonstrations Killed RULE obsessed simplifiedPostal conceptual pstLas_PROJECTucceededoluği personalities reshape enclosed\tptr tutorials exploded_DIRECTORY内容 canon recognisePAD Approx Restore Important heavier",
+    "temperature": 0,
+    "max_tokens": 256,
+    "ignore_eos": true
+  },
+  "response": {
+    "id": "cmpl-1127bf8dde184f418492ed07ad47d0e4",
+    "object": "text_completion",
+    "created": 1793127405,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "text": "\n\n  • 2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05 14:47:56\n    2019-03-05",
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "prompt_logprobs": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 269,
+      "total_tokens": 525,
+      "completion_tokens": 256,
+      "prompt_tokens_details": null
+    }
+  },
+  "scope": "One illustrative synthetic prompt; actual lengths vary across the full random workload."
+}

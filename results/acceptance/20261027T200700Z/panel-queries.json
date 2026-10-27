@@ -1,0 +1,259 @@
+[
+  {
+    "panel": "TTFT — histogram estimates",
+    "legend": "p50 estimate",
+    "request": {
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0.09157894736842105"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "TTFT — histogram estimates",
+    "legend": "p95 estimate",
+    "request": {
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0.21699999999999997"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Generation throughput",
+    "legend": "generated tokens/s",
+    "request": {
+      "query": "sum(rate(vllm:generation_tokens_total{job=\"vllm\"}[1m]))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "1238.7584777351492"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Running / waiting requests",
+    "legend": "running",
+    "request": {
+      "query": "sum(vllm:num_requests_running{job=\"vllm\"})",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Running / waiting requests",
+    "legend": "waiting",
+    "request": {
+      "query": "sum(vllm:num_requests_waiting{job=\"vllm\"})",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Queue time — mean and histogram estimates",
+    "legend": "p50 histogram estimate",
+    "request": {
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0.15"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Queue time — mean and histogram estimates",
+    "legend": "p95 histogram estimate",
+    "request": {
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0.285"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "Queue time — mean and histogram estimates",
+    "legend": "mean (sum/count)",
+    "request": {
+      "query": "sum(rate(vllm:request_queue_time_seconds_sum{job=\"vllm\"}[1m])) / sum(rate(vllm:request_queue_time_seconds_count{job=\"vllm\"}[1m]))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "0.021801291654507317"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "GPU KV cache usage",
+    "legend": "KV cache %",
+    "request": {
+      "query": "100 * vllm:gpu_cache_usage_perc{job=\"vllm\"}",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "instance": "vllm:8000",
+              "job": "vllm",
+              "model_name": "Qwen/Qwen2.5-0.5B-Instruct"
+            },
+            "value": [
+              1793131760.24,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "End-to-end latency — histogram estimates",
+    "legend": "p50 estimate",
+    "request": {
+      "query": "histogram_quantile(0.5, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "3.75"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "panel": "End-to-end latency — histogram estimates",
+    "legend": "p95 estimate",
+    "request": {
+      "query": "histogram_quantile(0.95, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+      "time": 1793131760.240279
+    },
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1793131760.24,
+              "4.875"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

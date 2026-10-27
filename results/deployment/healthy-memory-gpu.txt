@@ -1,0 +1,25 @@
+2026-10-27T14:41:36.2705709-04:00
+
+CommittedBytes             : 76671651840
+CommitLimit                : 88533008384
+PercentCommittedBytesInUse : 86
+AvailableMBytes            : 19362
+
+
+
+PrivateMemorySize64 : 20248969216
+WorkingSet64        : 15737184256
+
+
+              total        used        free      shared  buff/cache   available
+Mem:          31962       11513       17806         120        2643       19995
+Swap:          8192           1        8191
+name, driver_version, memory.total [MiB], memory.used [MiB], memory.free [MiB]
+NVIDIA GeForce RTX 4060 Laptop GPU, 560.94, 8188 MiB, 6523 MiB, 1435 MiB
+
+Name    : D
+FreeGiB : 67.05
+
+
+NAME                        IMAGE                                                                                             COMMAND                  SERVICE   CREATED         STATUS                        PORTS
+vllm-observability-vllm-1   vllm/vllm-openai:v0.8.0@sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea   "python3 -m vllm.ent…"   vllm      3 minutes ago   Up About a minute (healthy)   127.0.0.1:48173->8000/tcp

@@ -1,0 +1,45 @@
+{
+  "case_id": "monitoring-verification",
+  "started_at_utc": "2026-10-27T18:45:23.263183+00:00",
+  "finished_at_utc": "2026-10-27T18:45:24.414556+00:00",
+  "client_elapsed_seconds": 1.1513596000004327,
+  "request": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用中文简要说明为什么比较语言模型时，需要同时记录回答质量、首字延迟和生成吞吐量。"
+      }
+    ],
+    "temperature": 0,
+    "seed": 0,
+    "max_tokens": 128
+  },
+  "response": {
+    "id": "chatcmpl-c7ef0e2c18a34792b6e34e588fe0ca75",
+    "object": "chat.completion",
+    "created": 1793126723,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "reasoning_content": null,
+          "content": "在比较语言模型时，我们需要考虑多个关键指标，以确保我们选择的模型能够满足我们的需求并提供最佳性能。这些指标包括：\n\n1. **回答质量**：这涉及到模型对输入文本的理解能力，如识别语法错误、情感分析等。高质量的回答可以提高用户满意度。\n\n2. **首字延迟**：这是指模型处理每个单词的时间长度。短的首字延迟意味着模型更快地理解句子结构，从而可能更准确地回答问题或生成内容。\n\n3. **生成吞吐量**：这指的是模型每秒能生成的文本数量。高生成吞吐",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 56,
+      "total_tokens": 184,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+  }
+}

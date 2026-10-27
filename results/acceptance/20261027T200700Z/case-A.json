@@ -1,0 +1,56 @@
+{
+  "case_id": "case-A",
+  "run_id": "20261027T200700Z",
+  "started_at_utc": "2026-10-27T20:07:00.403549+00:00",
+  "concurrency": 1,
+  "requests": [
+    {
+      "case_id": "case-A",
+      "index": 0,
+      "started_at_utc": "2026-10-27T20:07:00.403549+00:00",
+      "request": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "messages": [
+          {
+            "role": "user",
+            "content": "请用中文列出 HTTP 状态码 200、404、500 各自的含义，每个状态码一句话。"
+          }
+        ],
+        "temperature": 0,
+        "seed": 0,
+        "max_tokens": 256
+      },
+      "response": {
+        "id": "chatcmpl-9152993e616c490ba75ff87a4de157d2",
+        "object": "chat.completion",
+        "created": 1793131620,
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": null,
+              "content": "HTTP状态码是用于标识请求和响应的不同类型和内容的一种标准。以下是HTTP状态码的定义及其含义：\n\n1. **200 OK**：表示请求成功，并且服务器已经收到并处理了请求。\n   - 意义：表示请求成功，服务器已接收并处理了请求。\n\n2. **404 Not Found**：表示请求的资源（如网页、文件等）不存在或不可达。\n   - 意义：表示请求的资源没有找到，或者请求的资源无法访问。\n\n3. **500 Internal Server Error**：表示服务器内部发生错误，导致请求被拒绝。\n   - 意义：表示服务器内部发生了问题，导致请求被拒绝，需要重新尝试。\n\n这些状态码在实际应用中非常有用，它们帮助开发者了解请求的状态，以便做出相应的调整和优化。",
+              "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 60,
+          "total_tokens": 242,
+          "completion_tokens": 182,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null
+      },
+      "http_status": 200,
+      "finished_at_utc": "2026-10-27T20:07:02.384786+00:00",
+      "client_elapsed_seconds": 1.9815048000018578
+    }
+  ],
+  "finished_at_utc": "2026-10-27T20:07:02.384786+00:00"
+}

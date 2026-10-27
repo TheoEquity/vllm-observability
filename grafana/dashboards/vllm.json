@@ -1,0 +1,405 @@
+{
+  "uid": "vllm-observability",
+  "title": "vLLM observability — real GPU experiment",
+  "description": "Qwen2.5-0.5B-Instruct / vLLM 0.8.0 V0. 5s scrape; rolling 1m rate and histogram estimates. Use annotations and absolute UTC ranges to correlate cases. No artificial zero fill.",
+  "tags": [
+    "vllm",
+    "experiment"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 41,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "editable": false,
+  "panels": [
+    {
+      "id": 1,
+      "title": "TTFT — histogram estimates",
+      "description": "Engine time to first token; p50/p95 are histogram interpolation estimates over a rolling 1 minute. Includes engine queuing; distinct from client first-content latency. Zero observations produce NaN / no data.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p50 estimate",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(vllm:time_to_first_token_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p95 estimate",
+          "refId": "B",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Generation throughput",
+      "description": "Generated tokens per second, averaged over a rolling 1 minute; not instantaneous decode speed.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(vllm:generation_tokens_total{job=\"vllm\"}[1m]))",
+          "legendFormat": "generated tokens/s",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "tps",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Running / waiting requests",
+      "description": "Gauges sampled every 5 seconds. Short requests and transient queues can occur between samples.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum(vllm:num_requests_running{job=\"vllm\"})",
+          "legendFormat": "running",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        },
+        {
+          "expr": "sum(vllm:num_requests_waiting{job=\"vllm\"})",
+          "legendFormat": "waiting",
+          "refId": "B",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Queue time — mean and histogram estimates",
+      "description": "Rolling 1 minute. Mean uses sum/count. V0 first bucket is 0.3s: if all observations are below it, interpolated p50=0.15s and p95=0.285s are NOT measured queue times. Zero observations stay NaN / no data.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p50 histogram estimate",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(vllm:request_queue_time_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p95 histogram estimate",
+          "refId": "B",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        },
+        {
+          "expr": "sum(rate(vllm:request_queue_time_seconds_sum{job=\"vllm\"}[1m])) / sum(rate(vllm:request_queue_time_seconds_count{job=\"vllm\"}[1m]))",
+          "legendFormat": "mean (sum/count)",
+          "refId": "C",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "GPU KV cache usage",
+      "description": "Percentage of allocated GPU KV cache blocks in use, not physical GPU memory utilization. Host nvidia-smi CSV measures physical memory separately. Five-second scrape can miss short peaks.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 18,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "100 * vllm:gpu_cache_usage_perc{job=\"vllm\"}",
+          "legendFormat": "KV cache %",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "End-to-end latency — histogram estimates",
+      "description": "Engine request completion latency; p50/p95 are histogram interpolation estimates over a rolling 1 minute. Not client HTTP latency. Zero observations produce NaN / no data.",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 18,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "vllm-prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p50 estimate",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(vllm:e2e_request_latency_seconds_bucket{job=\"vllm\"}[1m])))",
+          "legendFormat": "p95 estimate",
+          "refId": "B",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "vllm-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 4,
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": false,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  }
+}

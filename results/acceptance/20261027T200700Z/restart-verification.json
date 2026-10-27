@@ -1,0 +1,12 @@
+{
+  "verified_at_utc": "2026-10-27T20:12:47.899824+00:00",
+  "same_container_ids": true,
+  "same_mounts": true,
+  "all_started_at_changed": true,
+  "same_cache_file_sizes_mtimes_targets": true,
+  "same_fixed_model": true,
+  "same_historical_prometheus_response": true,
+  "same_dashboard": true,
+  "same_annotations": true,
+  "healthy_api_grafana_prometheus_target": true
+}

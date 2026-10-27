@@ -1,0 +1,16 @@
+{
+  "request": {
+    "dashboardUID": "vllm-observability",
+    "time": 1793131687531,
+    "timeEnd": 1793131750240,
+    "tags": [
+      "acceptance",
+      "case-B"
+    ],
+    "text": "case-B: exact Chinese prompt and unedited responses in results/acceptance/20261027T200700Z/case-B.json"
+  },
+  "response": {
+    "id": 3,
+    "message": "Annotation added"
+  }
+}

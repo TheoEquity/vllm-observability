@@ -1,0 +1,18 @@
+[
+  {
+    "case": "A",
+    "url": "http://127.0.0.1:48175/d/vllm-observability?orgId=1&from=1793131605403&to=1793131642384&timezone=utc&refresh=",
+    "captured_at_utc": "2026-10-27T20:14:02.153Z",
+    "from_utc": "2026-10-27T20:06:45.403Z",
+    "to_utc": "2026-10-27T20:07:22.384Z",
+    "panel_title_visible": true
+  },
+  {
+    "case": "B",
+    "url": "http://127.0.0.1:48175/d/vllm-observability?orgId=1&from=1793131672531&to=1793131770240&timezone=utc&refresh=",
+    "captured_at_utc": "2026-10-27T20:14:06.240Z",
+    "from_utc": "2026-10-27T20:07:52.531Z",
+    "to_utc": "2026-10-27T20:09:30.240Z",
+    "panel_title_visible": true
+  }
+]

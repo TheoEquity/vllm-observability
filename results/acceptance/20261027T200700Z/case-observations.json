@@ -1,0 +1,32 @@
+{
+  "A": {
+    "requests": 1,
+    "successful_http": 1,
+    "finish_reasons": {
+      "stop": 1
+    },
+    "output_tokens": 182,
+    "duration_seconds": 1.9812369346618652,
+    "client_median_seconds": 1.9815048000018578,
+    "queue_observation_count": 1.0,
+    "queue_mean_seconds": 0.0008666515350341797,
+    "sampled_max_running": null,
+    "sampled_max_waiting": null,
+    "sampled_max_kv_percent": null
+  },
+  "B": {
+    "requests": 240,
+    "successful_http": 240,
+    "finish_reasons": {
+      "length": 240
+    },
+    "output_tokens": 92160,
+    "duration_seconds": 62.70895195007324,
+    "client_median_seconds": 4.120951500000956,
+    "queue_observation_count": 240.0,
+    "queue_mean_seconds": 0.02790767252445221,
+    "sampled_max_running": 16.0,
+    "sampled_max_waiting": 0.0,
+    "sampled_max_kv_percent": 3.0139394700489763
+  }
+}

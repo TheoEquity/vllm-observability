@@ -1,0 +1,35 @@
+Before temporary WSL page-cache reclaim
+2026-10-27T14:40:27.6332562-04:00
+
+CommittedBytes             : 86071042048
+CommitLimit                : 90609328128
+PercentCommittedBytesInUse : 94
+AvailableMBytes            : 6020
+
+
+
+PrivateMemorySize64 : 32148279296
+WorkingSet64        : 32050925568
+
+
+              total        used        free      shared  buff/cache   available
+Mem:          31962        6288        2205          42       23469       25262
+Swap:          8192           1        8191
+CacheReclaimExit=0
+After temporary WSL page-cache reclaim
+2026-10-27T14:40:36.6184652-04:00
+
+CommittedBytes             : 86181322752
+CommitLimit                : 90609328128
+PercentCommittedBytesInUse : 95
+AvailableMBytes            : 6612
+
+
+
+PrivateMemorySize64 : 32153001984
+WorkingSet64        : 25144217600
+
+
+              total        used        free      shared  buff/cache   available
+Mem:          31962        6259       24891          42         812       25330
+Swap:          8192           1        8191

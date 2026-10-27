@@ -1,0 +1,21 @@
+{
+  "source": "https://hub.docker.com/v2/repositories/vllm/vllm-openai/tags/v0.8.0",
+  "captured_at": "2026-10-27T14:31:34.8993236-04:00",
+  "name": "v0.8.0",
+  "full_size": 8853450085,
+  "images": [
+    {
+      "architecture": "amd64",
+      "features": "",
+      "variant": null,
+      "digest": "sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea",
+      "os": "linux",
+      "os_features": "",
+      "os_version": null,
+      "size": 8853450085,
+      "status": "active",
+      "last_pulled": "2026-10-27T18:19:15.274984823Z",
+      "last_pushed": "2025-03-18T21:40:47.842113566Z"
+    }
+  ]
+}

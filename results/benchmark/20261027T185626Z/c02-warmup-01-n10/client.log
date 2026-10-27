@@ -1,0 +1,44 @@
+INFO 10-27 19:26:40 [__init__.py:260] No platform detected, vLLM is running on UnspecifiedPlatform
+Namespace(backend='vllm', base_url='http://vllm:8000', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=2, model='Qwen/Qwen2.5-0.5B-Instruct', tokenizer='/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-0.5B-Instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775', use_beam_search=False, num_prompts=10, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=False, disable_tqdm=True, profile=False, save_result=True, save_detailed=True, metadata=None, result_dir='/experiment/results/benchmark/20261027T185626Z/c02-warmup-01-n10', result_filename='official.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='50,90,95,99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=256, random_output_len=256, random_range_ratio=1.0, random_prefix_len=0, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None)
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 2
+============ Serving Benchmark Result ============
+Successful requests:                     10        
+Benchmark duration (s):                  12.80     
+Total input tokens:                      2560      
+Total generated tokens:                  2560      
+Request throughput (req/s):              0.78      
+Output token throughput (tok/s):         199.96    
+Total Token throughput (tok/s):          399.93    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          52.71     
+Median TTFT (ms):                        52.85     
+P50 TTFT (ms):                           52.85     
+P90 TTFT (ms):                           59.56     
+P95 TTFT (ms):                           66.39     
+P99 TTFT (ms):                           71.85     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          9.83      
+Median TPOT (ms):                        9.68      
+P50 TPOT (ms):                           9.68      
+P90 TPOT (ms):                           10.47     
+P95 TPOT (ms):                           10.49     
+P99 TPOT (ms):                           10.50     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           9.83      
+Median ITL (ms):                         9.62      
+P50 ITL (ms):                            9.62      
+P90 ITL (ms):                            11.69     
+P95 ITL (ms):                            13.29     
+P99 ITL (ms):                            16.08     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          2559.47   
+Median E2EL (ms):                        2533.05   
+P50 E2EL (ms):                           2533.05   
+P90 E2EL (ms):                           2726.63   
+P95 E2EL (ms):                           2726.90   
+P99 E2EL (ms):                           2727.12   
+==================================================

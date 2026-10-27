@@ -1,0 +1,73 @@
+name: vllm-observability
+
+services:
+  vllm:
+    image: vllm/vllm-openai:v0.8.0@sha256:ce29db4955f06749d951cfa0ffd973741dcf9f1957d3166b6b5d75e86ff554ea
+    ports:
+      - "127.0.0.1:${VLLM_PORT:-48173}:8000"
+    volumes:
+      - huggingface-cache:/root/.cache/huggingface
+    environment:
+      VLLM_USE_V1: "0"
+      VLLM_NO_USAGE_STATS: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    shm_size: 1gb
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command:
+      - --disable-frontend-multiprocessing
+      - --model
+      - Qwen/Qwen2.5-0.5B-Instruct
+      - --revision
+      - 7ae557604adf67be50417f59c2c2f167def9a775
+      - --dtype
+      - half
+      - --max-model-len
+      - "2048"
+      - --gpu-memory-utilization
+      - "0.5"
+      - --max-num-seqs
+      - "16"
+    healthcheck:
+      test: [CMD, python3, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 10s
+      timeout: 6s
+      retries: 60
+      start_period: 120s
+
+  prometheus:
+    image: prom/prometheus:v3.15.1@sha256:d445d1806b38f85b5c394a1b87f94113fde0473b45245922c2e8b1bd41fa68ae
+    ports:
+      - "127.0.0.1:${PROMETHEUS_PORT:-48174}:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+
+  grafana:
+    image: grafana/grafana:12.4.14@sha256:1b59d2076a5e08e0e9929a1225f37869ee7719f4a11c004fbfcfa8b772858e89
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-48175}:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?Generate a local password in .env; see README}
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/etc/grafana/dashboards:ro
+
+volumes:
+  prometheus-data:
+  grafana-data:
+  huggingface-cache:
